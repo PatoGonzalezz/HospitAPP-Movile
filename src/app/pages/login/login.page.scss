@@ -1,0 +1,61 @@
+html {
+    height:100%;
+  }
+.icon-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+
+  }
+
+  
+.bg {
+    animation:slide 3s ease-in-out infinite alternate !important;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%)!important;
+    bottom:0!important;
+    left:-50%!important;
+    opacity:.5!important;
+    position:fixed!important;
+    right:-50%!important;
+    top:0!important;
+    z-index:-1!important;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse!important;
+    animation-duration:4s!important;
+  }
+  
+  .bg3 {
+    animation-duration:5s!important;
+  }
+  
+  .content {
+    background-color:rgba(255,255,255,.8)!important;
+    border-radius:.25em !important;
+    box-shadow:0 0 .25em rgba(0,0,0,.25)!important;
+    box-sizing:border-box !important;
+    left:50% !important;
+    padding:10vmin !important;
+    position:fixed !important;
+    text-align:center !important;
+    top:50% !important;
+    transform:translate(-50%, -50%) !important;
+  }
+  
+  h1 {
+    font-family:monospace !important;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+  ion-content{
+    --background: url('https://4kwallpapers.com/images/wallpapers/ios-13-stock-ipados-green-black-background-amoled-ipad-hd-1125x2436-793.jpg') no-repeat center center / cover;
+}

@@ -1,0 +1,35 @@
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+<ion-content [fullscreen]="true">
+  <ion-card >
+    <!-- <img alt="login_img" src="" /> -->
+    <ion-card-header>
+      <ion-card-title>Inicio de Sesión</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content >
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="user.usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="success" (click)="ingresar()">Ingresar</ion-button>
+        </ion-col>
+      </ion-row>
+      <br>
+      <p class="ion-text-center">¿Tienes cuenta de Google?</p>
+      <br>
+      <div class="icon-container">
+        <ion-icon name="logo-google"></ion-icon>
+      </div>
+    </ion-card-content>
+    
+    <br><br>
+  </ion-card>
+</ion-content>

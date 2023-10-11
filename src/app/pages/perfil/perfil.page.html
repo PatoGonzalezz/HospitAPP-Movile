@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Header -->
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="medium">Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <br><br><br>
+  <!-- Header -->
+  <b class="ion-text-center">
+    <h4>Información Adicional</h4>
+  </b>
+  <ion-item class="ion-padding-horizontal">
+    <ion-label position="stacked">Nombre</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item class="ion-padding-horizontal">
+    <ion-label position="stacked">Apellido</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item class="ion-padding-horizontal">
+    <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+    <ion-input type="date"></ion-input>
+  </ion-item>
+  <ion-item class="ion-padding-horizontal">
+    <ion-label position="stacked">Sistema de salud</ion-label>
+    <mat-select>
+      <mat-option *ngFor ="let sistema of sistemas" [value]="sistema">{{sistema}}</mat-option>
+    </mat-select>
+    <!-- Acá iría un dropbox con opciones  -->
+  </ion-item>
+  <!-- <ion-item class="ion-padding-horizontal">
+    <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+    <ion-input type="date"></ion-input>
+  </ion-item> -->
+
+</ion-content>
