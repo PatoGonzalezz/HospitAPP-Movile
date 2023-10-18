@@ -18,6 +18,7 @@ export class HomePage {
    * a los : puntos
    * 
    */
+  darkmode=false;
   data:any;
   niveles:any[]=[
     {id:1, nivel:"Basica Incompleta"},
@@ -45,6 +46,9 @@ export class HomePage {
       }
     });
   }
+  ngOnInit(){
+    this.check_app_mode();
+  }
 
   ionViewCanEnter(): boolean {
     // Verificar 
@@ -65,4 +69,21 @@ export class HomePage {
   }
   mostrar(){}
 
+  check_app_mode(){
+    const esDarkMode =  localStorage.getItem('darkmodeActivated');
+    esDarkMode == 'true'
+      ? (this.darkmode = true)
+      : (this.darkmode = false) 
+      document.body.classList.toggle('dark', this.darkmode)
+    }
+
+  toggleDarkMode(){
+    this.darkmode = !this.darkmode;
+    document.body.classList.toggle('dark',this.darkmode);
+    if (this.darkmode){
+      localStorage.setItem( 'darkModeActived', 'true');
+    }else{
+      localStorage.setItem('darkModeActivated','false');
+    }
+  }
 }
