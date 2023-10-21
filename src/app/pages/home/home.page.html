@@ -33,7 +33,7 @@
         <ion-toggle slot="end" mode="ios" [checked]="darkmode" (ionChange)="toggleDarkMode()"></ion-toggle>
       </ion-item>
 
-      <ion-item button [routerLink]="['/login']" id="logout">
+      <ion-item button [routerLink]="['/login']" id="logout" (click)="logout()">
         <ion-icon name="log-out-outline"></ion-icon>        <ion-label class="MenuS">  Cerrar Sesión</ion-label>      
       </ion-item>
       

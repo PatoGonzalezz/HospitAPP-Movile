@@ -86,4 +86,7 @@ export class HomePage {
       localStorage.setItem('darkModeActivated','false');
     }
   }
+  logout(){
+    localStorage.removeItem('ingresado');
+  }
 }
