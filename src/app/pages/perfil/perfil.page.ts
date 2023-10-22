@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
+  nombre:any;
+
+  comparedWith:any;
+
+
   constructor() { }
 
   sistemas =  ['Isapre', 'Fonasa']
