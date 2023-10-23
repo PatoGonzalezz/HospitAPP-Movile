@@ -9,7 +9,7 @@ import { User } from '../clases/User';
 })
 export class ServicerestService {
 
-  URL: string = `https://nancyb3a.github.io/Test_/usuarios_PGY4121_08.json`;
+  URL = `https://nancyb3a.github.io/Test_/usuarios_PGY4121_08.json`;
 
   httpHeader = {
     headers: new HttpHeaders({ 
@@ -20,10 +20,17 @@ export class ServicerestService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(id: any): Observable<User[]>{
-    return this.http.get<User[]>(`${this.URL}/users/`+ id).pipe(
+  getUser(id: any){
+    return this.http.get(`${this.URL}` + id).pipe(
       tap((_) => console.log(`User fetched: ${id}`)),
       catchError(this.handleError<User[]>(`Get user id=${id}`))
+    );
+  }
+
+  getUserList(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.URL}`).pipe(
+      tap((User) => console.log('User fetched!')),
+      catchError(this.handleError<User[]>('Get user', []))
     );
   }
 

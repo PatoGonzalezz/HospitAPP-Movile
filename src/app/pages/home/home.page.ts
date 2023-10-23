@@ -35,19 +35,13 @@ export class HomePage {
     educacion:"",
     nacimiento:""
   };
-  constructor(private activateRoute: ActivatedRoute, private router: Router) {
+  constructor(private router: Router) {
     // Se llama a la ruta activa y se obtiene sus parametros mediante una suscripción
-    this.activateRoute.queryParams.subscribe(params =>{//utilizo lambda
-      if (this.router.getCurrentNavigation()?.extras.state) {
-        this.data = this.router.getCurrentNavigation()?.extras.state?.["user"];
-        console.log(this.data)
-      }else{
-        this.router.navigate(["/home"]);
-      }
-    });
-  }
+        this.router.navigate(['home/inicio']);
+    };
+  
   ngOnInit(){
-    this.check_app_mode();
+    // this.check_app_mode();
   }
 
   ionViewCanEnter(): boolean {
@@ -67,26 +61,32 @@ export class HomePage {
       Object.defineProperty(this.datos,key,{value:""});
     }
   }
-  mostrar(){}
+  // mostrar(){}
 
-  check_app_mode(){
-    const esDarkMode =  localStorage.getItem('darkmodeActivated');
-    esDarkMode == 'true'
-      ? (this.darkmode = true)
-      : (this.darkmode = false) 
-      document.body.classList.toggle('dark', this.darkmode)
-    }
+  // check_app_mode(){
+  //   const esDarkMode =  localStorage.getItem('darkmodeActivated');
+  //   esDarkMode == 'true'
+  //     ? (this.darkmode = true)
+  //     : (this.darkmode = false) 
+  //     document.body.classList.toggle('dark', this.darkmode)
+  //   }
 
-  toggleDarkMode(){
-    this.darkmode = !this.darkmode;
-    document.body.classList.toggle('dark',this.darkmode);
-    if (this.darkmode){
-      localStorage.setItem( 'darkModeActived', 'true');
-    }else{
-      localStorage.setItem('darkModeActivated','false');
-    }
-  }
+  // toggleDarkMode(){
+  //   this.darkmode = !this.darkmode;
+  //   document.body.classList.toggle('dark',this.darkmode);
+  //   if (this.darkmode){
+  //     localStorage.setItem( 'darkModeActived', 'true');
+  //   }else{
+  //     localStorage.setItem('darkModeActivated','false');
+  //   }
+  // }
   logout(){
     localStorage.removeItem('ingresado');
+  }
+  segmentChanged($event: any){
+    console.log("Hola")
+    console.log($event);
+    let direccion = $event.detail.value;
+    this.router.navigate(['/home/'+direccion]);
   }
 }

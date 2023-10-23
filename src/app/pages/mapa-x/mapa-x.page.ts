@@ -16,7 +16,7 @@ export class MapaXPage implements OnInit {
   ngOnInit() {
     const map = new mapboxgl.Map({
       container: 'map-container', // container ID
-      style: 'mapbox://styles/mapbox/streets-v12', // style URL
+      style: 'mapbox://styles/mapbox/navigation-night-v1', // style URL
       center: [-71.533143,-33.033704], // starting position [lng, lat]
       zoom: 14, // starting zoom
       });
