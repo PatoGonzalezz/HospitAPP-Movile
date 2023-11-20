@@ -1,9 +1,21 @@
+<ion-content>
 
-<br><br><br><br><br><br><br><br><br><br><br>
+  <form [formGroup]="form">
+    <app-login-custom autocomplete="email" [control]="form.controls.email" type="email" label="Correo" icon="mail-outline"></app-login-custom>
+    <app-login-custom [control]="form.controls.password" type="password" label="Contraseña" icon="lock-closed-outline"></app-login-custom>
+    {{ form.value | json }}
+  </form>
+
+
+</ion-content>  
+
+
+<!-- <br><br><br><br><br><br><br><br><br><br><br>
+  
 
 <ion-content [fullscreen]="true">
   <ion-card >
-    <!-- <img alt="login_img" src="" /> -->
+    // <img alt="login_img" src="" />
     <ion-card-header>
       <ion-card-title>Inicio de Sesión</ion-card-title>
     </ion-card-header>
@@ -32,4 +44,4 @@
     
     <br><br>
   </ion-card>
-</ion-content>
+</ion-content> -->

@@ -11,6 +11,12 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
+
+  form = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required])
+  })
+
   /**
    * Se genera el modelo user con dos claves
    * cada clave tiene su valor inicial
