@@ -7,7 +7,7 @@
   [formControl]="control"
   label-placement="floating"></ion-input>
 
-  <ion-button (click)="shorOrHidePassword()" slot="end" fill="clear" shape="round">
+  <ion-button *ngIf="isPassword" (click)="shorOrHidePassword()" slot="end" fill="clear" shape="round">
     <ion-icon slot="icon-only" [name]="hide ? 'eye-outline' : 'eye-off-outline'"></ion-icon>  
   </ion-button>
 </ion-item>

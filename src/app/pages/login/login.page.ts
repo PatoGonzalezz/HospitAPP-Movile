@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +31,17 @@ export class LoginPage implements OnInit {
    field:string="";
    constructor(private router: Router, public toastController: ToastController) { }
 
+   firebaseSvc = inject(FirebaseService);
+
    ngOnInit() {
+   }
+
+   submit(){
+    if (this.form.valid){
+      this.firebaseSvc.signIn(this.form.value as User).then(res => {
+        console.log(res)
+      })
+    }
    }
 
    ingresar(){

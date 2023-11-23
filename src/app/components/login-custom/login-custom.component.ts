@@ -19,7 +19,9 @@ export class LoginCustomComponent  implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.type == 'password') this.isPassword = true;
+  }
 
   shorOrHidePassword(){
 
