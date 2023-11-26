@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-inicio',
@@ -9,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class InicioComponent  implements OnInit {
   darkmode=true;
   data: any;
+  utilSvc = inject(UtilsService)
 
   constructor(private activateRoute: ActivatedRoute, private router: Router) { 
     this.activateRoute.queryParams.subscribe(params =>{//utilizo lambda
@@ -29,7 +31,25 @@ export class InicioComponent  implements OnInit {
 
   logout(){
     localStorage.removeItem('ingresado');
+    this.utilSvc.routerLink('/login');
   }
+
+  perfil(){
+    this.utilSvc.routerLink('/perfil')
+  }
+
+  config(){
+    this.utilSvc.routerLink('/config')
+  }
+
+  historial(){
+    this.utilSvc.routerLink('/historial')
+  }
+
+  notfound(){
+    this.utilSvc.routerLink('/notfound')
+  }
+
   check_app_mode(){
     const esDarkMode =  localStorage.getItem('darkmodeActivated');
     esDarkMode == 'true'

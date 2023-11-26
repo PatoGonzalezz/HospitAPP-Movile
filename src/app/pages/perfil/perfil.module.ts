@@ -8,6 +8,7 @@ import { PerfilPageRoutingModule } from './perfil-routing.module';
 
 import { PerfilPage } from './perfil.page';
 import {MatSelectModule} from '@angular/material/select';
+import { LoginPageModule } from '../login/login.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     IonicModule,
     PerfilPageRoutingModule,
-    MatSelectModule
+    MatSelectModule,
+    LoginPageModule
   ],
   declarations: [PerfilPage]
 })

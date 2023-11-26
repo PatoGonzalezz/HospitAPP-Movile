@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ServicerestService } from 'src/app/services/servicerest.service';
+import { User } from 'src/app/models/user.model';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { UtilsService } from 'src/app/services/utils.service';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-perfil',
@@ -8,39 +12,25 @@ import { ServicerestService } from 'src/app/services/servicerest.service';
 })
 export class PerfilPage implements OnInit {
 
-  users:any;
-  user:any={
-    id: null,
-    nombre: "",
-    username: "",
-    password: ""
-  };
-
   comparedWith:any;
 
+  form = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required])
+  })
 
-  constructor(private api:ServicerestService) {
-    this.getUserList(); 
-  }
+  firebaseSvc = inject(FirebaseService);
+  utilSvc = inject(UtilsService)
 
-  getUser(userId: any) {
-    this.api.getUser(userId).subscribe((data) => {
-      console.log(data);
-      this.user = data;
-    });
-  }
-
-  getUserList() {
-    this.api.getUserList().subscribe((data) => {
-      console.log(data);
-      this.users = data;
-
-    });
+  constructor() {
   }
 
   sistemas =  ['Isapre', 'Fonasa']
 
   ngOnInit() {
   }
+
+  user = JSON.parse(localStorage.getItem('user'));
+    
 
 }

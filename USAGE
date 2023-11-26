@@ -2,5 +2,4 @@ PARA INICIAR EL PROYECTO, EJECUTA ESTE CÓDIGO EN LA CONSOLA.
 
 npm install @ionic-native/core --legacy-peer-deps
 ionic capacitor build android
-fsañlñlfsa
 

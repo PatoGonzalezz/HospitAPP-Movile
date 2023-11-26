@@ -5,9 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { InicioComponent } from 'src/app/components/inicio/inicio.component';
-import { GpsComponent } from 'src/app/components/gps/gps.component';
-import { UsuarioComponent } from 'src/app/components/usuario/usuario.component';
+import { SharedModule } from 'src/app/components/shared.module';
 
 
 @NgModule({
@@ -15,8 +13,9 @@ import { UsuarioComponent } from 'src/app/components/usuario/usuario.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    SharedModule
   ],
-  declarations: [HomePage, InicioComponent, GpsComponent, UsuarioComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

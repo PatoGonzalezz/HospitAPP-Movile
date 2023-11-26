@@ -1,9 +1,68 @@
+<ion-content>
+  <ion-card>
+    <div class="d-flex-center">
+      <ion-card-header>
+        <ion-card-title>Inicio de Sesión</ion-card-title>
+      </ion-card-header>
+      <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+      <ion-card-content>
+        <ion-item>
+          <!-- Correo -->
+          <app-login-custom 
+          autocomplete="email" 
+          [control]="form.controls.email" 
+          type="email" 
+          label="Correo" 
+          icon="mail-outline">
+          </app-login-custom>
+          <br><br>
+        </ion-item>
+          <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+            <br>
+            <div *ngIf="form.controls.email.errors?.['required']">El correo es requerido</div>
+            <div *ngIf="form.controls.email.errors?.['email']">Ingrese un correo valido</div>
+          </div>
+      
+        <!-- Contraseña -->
+        <ion-item>
+          <app-login-custom 
+          [control]="form.controls.password" 
+          type="password" label="Contraseña" 
+          icon="lock-closed-outline">
+          </app-login-custom>
+        </ion-item>
+        <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.touched">
+          <br>
+          <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
+        </div>
+      <br>
+      <p routerLink="forgot-pass">¿Olvidaste tu contraseña?</p>
+      
+        <ion-col>
+          <ion-button  expand="block" mode="md" class="submit" type="submit" [disabled]="form.invalid">
+            Ingresar
+            <ion-icon slot="end" name="log-in-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="ion-margin-top" expand="block" routerLink="sign-up" mode="md" fill="outline">
+            Registrarse
+            <ion-icon slot="end" name="person-add-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-card-content>
+      </form>
+    </div>
+  </ion-card>
+</ion-content>  
 
-<br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- <br><br><br><br><br><br><br><br><br><br><br>
+  
 
 <ion-content [fullscreen]="true">
   <ion-card >
-    <!-- <img alt="login_img" src="" /> -->
+    // <img alt="login_img" src="" />
     <ion-card-header>
       <ion-card-title>Inicio de Sesión</ion-card-title>
     </ion-card-header>
@@ -32,4 +91,4 @@
     
     <br><br>
   </ion-card>
-</ion-content>
+</ion-content> -->
