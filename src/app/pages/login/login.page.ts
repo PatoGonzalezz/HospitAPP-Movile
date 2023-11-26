@@ -24,12 +24,12 @@ export class LoginPage implements OnInit {
    * Se genera el modelo user con dos claves
    * cada clave tiene su valor inicial
    */
-  user={
-     usuario:"",
-     password:""
-   }
-   // variable para mostrar el campo faltante
-   field:string="";
+  // user={
+  //    usuario:"",
+  //    password:""
+  //  }
+  //  // variable para mostrar el campo faltante
+  //  field:string="";
    constructor(private router: Router, public toastController: ToastController) { }
 
    firebaseSvc = inject(FirebaseService);

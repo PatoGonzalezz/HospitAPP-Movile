@@ -21,20 +21,7 @@
   </b>
   <ion-item class="ion-padding-horizontal">
     <ion-label position="stacked">Nombre</ion-label>
-    <ion-label placeholder="Inserte su Nombre"></ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-list>
-      <ion-item *ngIf="!users" class="ion-padding custom-skeleton">
-        <ion-label>
-          <ion-skeleton-text animated></ion-skeleton-text>
-          <ion-skeleton-text animated style="width:60%;"></ion-skeleton-text>
-        </ion-label>
-      </ion-item>
-      <ion-item *ngFor="let user of users">
-        <ion-label><p>{{user.nombre}}</p></ion-label>
-      </ion-item>
-    </ion-list>  
+    <ion-label position="stacked">{{user.name}}</ion-label>
   </ion-item>
   <ion-item class="ion-padding-horizontal">
     <ion-label position="stacked">Fecha de Nacimiento</ion-label>

@@ -33,6 +33,11 @@ export class InicioComponent  implements OnInit {
     localStorage.removeItem('ingresado');
     this.utilSvc.routerLink('/login');
   }
+
+  perfil(){
+    this.utilSvc.routerLink('/perfil')
+  }
+
   check_app_mode(){
     const esDarkMode =  localStorage.getItem('darkmodeActivated');
     esDarkMode == 'true'
