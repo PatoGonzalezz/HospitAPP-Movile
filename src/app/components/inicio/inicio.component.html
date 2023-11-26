@@ -7,16 +7,16 @@
   </ion-header>
   <ion-content class="ion-padding">
 
-    <ion-item button [routerLink]="['/historial']">
+    <ion-item button routerLink='/historial'>
       <ion-icon name="document-outline"></ion-icon>        <ion-label class="MenuS">  Ir al Historial</ion-label>      
     </ion-item>
 
-    <ion-item button [routerLink]="['/perfil']">
+    <ion-item button routerLink="['/perfil']">
       <ion-icon name="person-outline"></ion-icon>
       <ion-label class="MenuS">  Ver cuenta</ion-label>      
     </ion-item>
 
-    <ion-item button [routerLink]="['/config']">
+    <ion-item button routerLink="['/config']">
       <ion-icon name="settings-outline"></ion-icon>        <ion-label class="MenuS">  Ir a configuración</ion-label>      
     </ion-item>
 
@@ -26,7 +26,7 @@
       <ion-toggle slot="end" mode="ios" [checked]="darkmode" (ionChange)="toggleDarkMode()"></ion-toggle>
     </ion-item>
 
-    <ion-item [routerLink]="['/login']" button id="logout" (click)="logout()">
+    <ion-item routerLink="/login" button id="logout" (click)="logout()">
       <ion-icon name="log-out-outline"></ion-icon>        <ion-label class="MenuS">  Cerrar Sesión</ion-label>      
     </ion-item>
     
@@ -61,7 +61,7 @@
     <ion-card-subtitle class="ion-text-center">Selecciona "Buscar hospitales cercanos" para redirigirte al mapa</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
-    <ion-button color="success" expand="block" [routerLink]="['../components']">Buscar hospitales cercanos</ion-button>
+    <ion-button color="success" expand="block" routerLink="['../components']">Buscar hospitales cercanos</ion-button>
   </ion-card-content>
 </ion-card>
 
@@ -71,7 +71,7 @@
       <ion-card-title class="ion-text-center" size="12">En este apartado podrás ver tus visitas a los Hospitales más cercanos!</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-button color="success" expand="block" [routerLink]="['/historial']">Ver tu historial</ion-button>
+      <ion-button color="success" expand="block" routerLink="['/historial']">Ver tu historial</ion-button>
     </ion-card-content>
   </ion-card>
  

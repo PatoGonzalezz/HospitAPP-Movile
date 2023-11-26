@@ -2,6 +2,7 @@
   <div class="d-flex-center">
     <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
 
+      <!-- Correo -->
       <app-login-custom 
       autocomplete="email" 
       [control]="form.controls.email" 
@@ -14,6 +15,7 @@
         <div *ngIf="form.controls.email.errors?.['email']">Ingrese un correo valido</div>
       </div>
 
+      <!-- Contraseña -->
       <app-login-custom 
       [control]="form.controls.password" 
       type="password" label="Contraseña" 
@@ -25,11 +27,11 @@
       
       <p routerLink="forgot-pass">¿Olvidaste tu contraseña?</p>
 
-      <ion-button  expand="block" mode="android" class="submit" type="submit" [disabled]="form.invalid">
+      <ion-button  expand="block" mode="md" class="submit" type="submit" [disabled]="form.invalid">
         Ingresar
         <ion-icon slot="end" name="log-in-outline"></ion-icon>
       </ion-button>
-      <ion-button class="ion-margin-top" expand="block" routerLink="sign-up" mode="android" fill="outline">
+      <ion-button class="ion-margin-top" expand="block" routerLink="sign-up" mode="md" fill="outline">
         Registrarse
         <ion-icon slot="end" name="person-add-outline"></ion-icon>
       </ion-button>

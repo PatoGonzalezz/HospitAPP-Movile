@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
-import { LoginCustomComponent } from 'src/app/components/login-custom/login-custom.component';
+import { SharedModule } from 'src/app/components/shared.module';
 
 @NgModule({
   imports: [
@@ -15,8 +15,9 @@ import { LoginCustomComponent } from 'src/app/components/login-custom/login-cust
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
-  declarations: [LoginPage, LoginCustomComponent]
+  declarations: [LoginPage]
 })
 export class LoginPageModule {}
