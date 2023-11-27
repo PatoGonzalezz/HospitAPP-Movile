@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.codingtechnyks.gps',
-  appName: 'SkeletonApp',
+  appName: 'HospitAPP',
   webDir: 'www',
   server: {
     androidScheme: 'https'
