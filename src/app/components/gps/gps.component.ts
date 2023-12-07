@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
 import { Geolocation } from '@capacitor/geolocation';
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+
 
 
 @Component({
@@ -19,6 +21,12 @@ export class GpsComponent  implements OnInit {
       center: [-71.533143,-33.033704], // starting position [lng, lat]
       zoom: 14, // starting zoom
       });
+      map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }),
+        'top-left'
+    );
 
             //Función para popups a los Markers.
 
