@@ -6,7 +6,6 @@
     <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -21,6 +20,8 @@
     </ion-card-header>
     <ion-card-content>
       <ion-button expand="block" color="success">Repetir Ruta</ion-button>
+      <br>
+      <ion-button expand="block" color="success" (click)="openEmail()">Compartir información</ion-button>
     </ion-card-content>
   </ion-card>
   <ion-card>
@@ -31,6 +32,8 @@
     </ion-card-header>
     <ion-card-content>
       <ion-button expand="block" color="success">Repetir Ruta</ion-button>
+      <br>
+      <ion-button expand="block" color="success" (click)="openEmail()">Compartir información</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

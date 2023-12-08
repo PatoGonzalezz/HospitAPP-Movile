@@ -38,6 +38,18 @@ export class InicioComponent  implements OnInit {
     this.utilSvc.routerLink('/perfil')
   }
 
+  config(){
+    this.utilSvc.routerLink('/config')
+  }
+
+  historial(){
+    this.utilSvc.routerLink('/historial')
+  }
+
+  notfound(){
+    this.utilSvc.routerLink('/notfound')
+  }
+
   check_app_mode(){
     const esDarkMode =  localStorage.getItem('darkmodeActivated');
     esDarkMode == 'true'

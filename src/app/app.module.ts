@@ -12,6 +12,8 @@ import { ServicerestService } from './services/servicerest.service';
 // === Firebase ===
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
+import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx'
+// === Email ===
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +24,7 @@ import { environment } from 'src/environments/environment';
     BrowserAnimationsModule, 
     HttpClientModule, 
     AngularFireModule.initializeApp(environment.firebaseConfig)], 
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ServicerestService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },EmailComposer,  ServicerestService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
