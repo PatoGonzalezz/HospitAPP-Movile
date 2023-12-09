@@ -36,6 +36,8 @@
           <br>
           <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
         </div>
+      <br>  
+        <p routerLink="forgot-pass" class="ion-text-end">¿Olvidaste la Contraseña?</p>
       <br>
         <ion-col>
           <ion-button  expand="block" mode="md" class="submit" type="submit" [disabled]="form.invalid">
